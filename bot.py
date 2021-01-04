@@ -20,4 +20,4 @@ async def on_member_join(member):
 async def on_member_leave(member):
     print(f'(member) has left the current server')
 
-client.run('Nzk0MDM5NTk2OTQxMTgwOTY5.X-1BAA.IWAS7N_kHo_NOQjuGEi7I9hrh3E')
+client.run('TOKEN HERE')
