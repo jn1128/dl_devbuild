@@ -27,9 +27,9 @@ async def on_member_leave(member):
 @client.command()
 async def ping(ctx):
     if {round(client.latency * 1000)} > 20: {
-    await ctx.send(f'ping is {round(client.latency * 1000)}ms, you got cheap walmart connection?')
+        await ctx.send(f'ping is {round(client.latency * 1000)}ms, you got cheap walmart connection?')
     else:
-    await ctx.send(f'ping is {round(client.latency * 1000)}ms')
+        await ctx.send(f'ping is {round(client.latency * 1000)}ms')
 
 @client.command(pass_context = True)
 async def join(ctx):
@@ -39,7 +39,7 @@ async def join(ctx):
     if voice_client is None:
         return await ctx.send('Must be in voice channel to use command')
     else:
-    await client.join_voice_channel(channel)
+        await client.join_voice_channel(channel)
 
 @client.command()
 async def leave(ctx):
