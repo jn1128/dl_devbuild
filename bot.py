@@ -38,8 +38,9 @@ async def join(ctx):
     voice_client = ctx.member.voice
 
     if voice_client is None:
-        return await ctx.send('Must be in voice channel to use command') else: {
-    await client.join_voice_channel(channel)}
+        return await ctx.send('Must be in voice channel to use command')
+    else:
+    await client.join_voice_channel(channel)
 
 @client.command()
 async def leave(ctx):
