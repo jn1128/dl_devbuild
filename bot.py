@@ -20,4 +20,8 @@ async def on_member_join(member):
 async def on_member_leave(member):
     print(f'(member) has left the current server')
 
+@client.event
+async def ping(ctx):
+    await ctx.send(f'ping is {round(client.latency * 1000)}ms')
+
 client.run('TOKEN HERE')
