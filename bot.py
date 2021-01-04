@@ -28,9 +28,8 @@ async def on_member_leave(member):
 async def ping(ctx):
     if {round(client.latency * 1000)} > 20: {
     await ctx.send(f'ping is {round(client.latency * 1000)}ms, you got cheap walmart connection?')
-    } else: {
+    else:
     await ctx.send(f'ping is {round(client.latency * 1000)}ms')
-    }
 
 @client.command(pass_context = True)
 async def join(ctx):
