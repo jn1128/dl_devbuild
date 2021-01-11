@@ -132,4 +132,4 @@ async def stop(ctx):
     await voice_client.disconnect()
     await ctx.send('I stopped playing audio, imma go chill now')
 
-client.run('Nzk0MDM5NTk2OTQxMTgwOTY5.X-1BAA.kS0xGDSqoHLPeyjFRaxpPy_Xv70')
+client.run('TOKEN HERE')
