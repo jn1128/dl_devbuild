@@ -132,4 +132,33 @@ async def stop(ctx):
     await voice_client.disconnect()
     await ctx.send('I stopped playing audio, imma go chill now')
 
+ @client.command()
+async def on_message(message):
+    global messages
+    messages += 1
+
+    id = client.get_guild(794039596941180969)
+    channels = ["commands"]
+    valid_users = ["JOHN#0006,Irwin Kun#2918"]
+    bad_words = ["slots", "clipped", "fuck"]
+
+    for word in bad_words:
+        if message.content.count(word) > 0:
+            print("A bad word was said")
+            await message.channel.purge(limit=1)
+
+    if message.content == "-help":
+        embed = discord.Embed(title="Help on BOT", description="Some useful commands")
+        embed.add_field(name="!hello", value="Greets the user")
+        embed.add_field(name="!users", value="Prints number of users")
+        await message.channel.send(content=None, embed=embed)
+
+    if str(message.channel) in channels and str(message.author) in valid_users:
+        if message.content.find("!hello") != -1:
+            await message.channel.send("Hi")
+        elif message.content == "!users":
+            await message.channel.send(f"""# of Members: {id.member_count}""")
+
+
+client.loop.create_task(update_stats())
 client.run('TOKEN HERE')
